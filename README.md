@@ -1,22 +1,43 @@
-# 0x12 Web stack debugging #2
+# ALX-sysitem_engineering-devops
 
-Debugging is the process of finding and fixing errors in software that prevents it from running correctly. As you become a more advanced programmer and an industry engineer, you will learn how to use debugging tools such as gdb or built-in tools that IDEs have. However, it’s important to understand the concepts and processes of debugging manually. This project covers a second part of the optimal framework and blueprint for debugging web stack (remote containers this scenario) bugs
+Low level and High level programming projects for DevOps implementations
 
-Challenge:
-
-The user root is, on Linux, the “superuser”. It can do anything it wants, that’s a good and bad thing. A good practice is that one should never be logged in the root user, as if you fat finger a command and for example run rm -rf /, there is no comeback. That’s why it is preferable to run as a privileged user, meaning that the user also has the ability to perform tasks that the root user can do, just need to use a specific command that you need to discover.
-
-For the containers that you are given in this project as well as the checker, everything is run under the root user, which has the ability to run anything as another user.
-
-## Tasks 
-
-Bash script that accepts one argument, the script should run the whoami command under the user passed as an argument, the script passes by different users
-Fix a container so that Nginx is running as the nginx user.
-Bash script must be 7 lines long or less from previos task
+## Projects inside this repo 
 
 
-## Filename
+* 0x00-shell_basic
+Basic Shells scripts for console management
+* 0x01-shell_permissions
+Implementation of shell permissions scripts
+* 0x02-shell_redirections
+Implementation of shell redirection scripts
+* 0x03-shell_variables_expansions	Implementation of scripts applying variables expansions
+* 0x04-loops_conditions_and_parsingShell scripts using loops conditions
+* 0x05-processes_and_signals
+Implementation of singal processes using shell script
+* 0x06-regular_expressions
+Understanding regular expresions by creating scripts in shell and python
+* 0x07-networking_basics
+Implementation of scripts for network latency in console
+* 0x08-networking_basics_2
+Pt of the 0x07 networking project
+* 0x09-web_infrastructure_design
+Deployment of a web infrastructure fo different scenarios
+* 0x0A-configuration_management
+Configuration management scripts for reliability in a infrastructure
+* 0x0B-ssh	SSH setup and configuration for n-servers
+* 0x0C-web_server
+Web-server setup in a LAMP stack
+* 0x0D-web_stack_debugging_0
+Script to fix common bugs in a runnig server
+* 0x0E-web_stack_debugging_1
+Addtitional scripts for debugging web-servers from console
+* 0x0F-load_balancer
+Load balancer setup and algorithm implementation
+* 0x10-https_ssl
+HTTTP_SSl certificate setup from console for any server in a LAMP stack
+* 0x11-what_happens_when_press_enter
+Blog defining concepts regarding web insfrastructures
+* 0x12-web_stack_debugging_2
+Medium-high level script for debugging issues in a server in a local console
 
-* 0-iamsomeonelese
-* 1-run_nginx_as_nginx
-* 100-fix_in_7_lines_or_less
