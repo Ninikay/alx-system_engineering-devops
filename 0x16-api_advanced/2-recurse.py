@@ -1,25 +1,38 @@
 #!/usr/bin/python3
+""" This module queries the Reddit API and prints the
+    titles of the first 10 hot posts
+        listed for a given subreddit
+"""
 
-import requests as r
+import json
+import requests
+import sys
 
 
-def recurse(subreddit, hot_list=[], after=""):
-    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
+def top_ten(subreddit):
+    """ Returns first 10 hot posts listed for
+        a given subreddit """
+    user_agent = 'Mozilla/5.0'
     headers = {
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:73.0) \
-        Gecko/20100101 Firefox/73.0"
-        }
-    param = {
-        "after": after,
-        "limit": 100,
+        'User-Agent': user_agent
     }
-    response = r.get(url, headers=headers, params=param, allow_redirects=False)
-    if response.status_code == 404:
-        return None
+
+    params = {
+        'limit': 10
+    }
+    url = "https://www.reddit.com/r/" + subreddit + "/hot.json"
+
+    response = requests.get(url,
+                            headers=headers,
+                            params=params,
+                            allow_redirects=False)
+    if response.status_code != 200:
+        print(None)
+        return
+    dic = response.json()
+    hot_posts = dic['data']['children']
+    if len(hot_posts) is 0:
+        print(None)
     else:
-        posts = response.json().get("data").get("children")
-        hot_list += [post.get("data").get("title") for post in posts]
-        after = response.json().get("data").get("after")
-        if after is not None:
-                recurse(subreddit, hot_list, after)
-        return hot_list
+        for post in hot_posts:
+            print(post['data']['title'])
